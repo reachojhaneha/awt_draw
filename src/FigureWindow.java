@@ -62,8 +62,8 @@ class FigureWindow extends Frame {
 		w.addFigure(new Circle(300, 200, 200));
 		w.addFigure(new Triangle(new int[] { 50, 100, 25 }, new int[] { 0, 100, 100 }));
 		w.addFigure(new Triangle());
-		w.addFigure(new Text("hi how are you",150,150));
-		w.addFigure(new Text("xyz"));
+		w.addFigure(new Text("/home/neha/eclipse-workspace/awt_draw/src/inputfile",150,150));
+		w.addFigure(new Text("/home/neha/eclipse-workspace/awt_draw/src/inputfile"));
 		w.addFigure(new Text());
 		w.show();
 	}

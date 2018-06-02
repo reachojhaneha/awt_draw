@@ -18,19 +18,14 @@ class Text extends Figure {
 	public Text(String s1, int inX, int inY) {
 		super(inX, inY);
 		 str = s1;
-
-		/*BufferedReader br = null;
+		BufferedReader br = null;
 		try {
-			br = new BufferedReader(new FileReader("/home/neha/eclipse-workspace/HelloWorld/src/inputfile"));
+			br = new BufferedReader(new FileReader(str));
 			String line;
 
 			while ((line = br.readLine()) != null) {
-				//System.out.println(line);
-				for(int i = 0; i<= line.length(); i++) {
-					str[i] = line[i];
-					
-				}
-				System.out.println(str);
+				
+					str1 = line;
 			}
 
 		} catch (IOException e) {
@@ -42,32 +37,76 @@ class Text extends Figure {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		}*/
+		}
 	}
 
 	public Text(){
-		super (0,0); 
+		super (defx,defy);
+		
+		BufferedReader br = null;
+		try {
+			br = new BufferedReader(new FileReader(str));
+			String line;
+
+			while ((line = br.readLine()) != null) {
+				
+					str1 = line;
+			}
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				br.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 		
 	}
 	
 	public Text(String s) {
-		super(0,0);
+		super(defx,defy);
 		str = s;
+		
+		BufferedReader br = null;
+		try {
+			br = new BufferedReader(new FileReader(str));
+			String line;
+
+			while ((line = br.readLine()) != null) {
+				
+					str1 = line;
+			}
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				br.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 	}
 	
 	
+
 
 	/**
 	 * Drawing method for circles.
 	 */
 	public void draw(Graphics g) {
-		g.drawString(str, x, y);
+		g.drawString(str1, x, y);
 
 	}
 
-	private String str = "abc";
-	private int x = 100;
-	private int y = 100;
-	//private String str[]; 
+	private String str1;// = "abc";
+	private static int defx = 100;
+	private static int defy = 100;
+	private static String str = "/home/neha/eclipse-workspace/awt_draw/src/inputfile";
+	
 	
 }
