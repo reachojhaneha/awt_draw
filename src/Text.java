@@ -18,14 +18,43 @@ class Text extends Figure {
 	public Text(String s1, int inX, int inY) {
 		super(inX, inY);
 		 str = s1;
+		 StringBuilder contentBuilder = new StringBuilder();
+
+		 BufferedReader br = null;
+		try {
+			br = new BufferedReader(new FileReader(str));
+			String line;
+              
+			while ((line = br.readLine()) != null) {
+				
+				contentBuilder.append(line).append("\n");
+				
+			}
+			str1 = contentBuilder.toString();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				br.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+
+	public Text() {
+		super(defx, defy);
+
 		BufferedReader br = null;
 		try {
 			br = new BufferedReader(new FileReader(str));
 			String line;
 
 			while ((line = br.readLine()) != null) {
-				
-					str1 = line;
+
+				str1 = line;
 			}
 
 		} catch (IOException e) {
@@ -38,46 +67,21 @@ class Text extends Figure {
 				e.printStackTrace();
 			}
 		}
+
 	}
 
-	public Text(){
-		super (defx,defy);
-		
-		BufferedReader br = null;
-		try {
-			br = new BufferedReader(new FileReader(str));
-			String line;
-
-			while ((line = br.readLine()) != null) {
-				
-					str1 = line;
-			}
-
-		} catch (IOException e) {
-			e.printStackTrace();
-		} finally {
-			try {
-				br.close();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		
-	}
-	
 	public Text(String s) {
-		super(defx,defy);
+		super(defx, defy);
 		str = s;
-		
+
 		BufferedReader br = null;
 		try {
 			br = new BufferedReader(new FileReader(str));
 			String line;
 
 			while ((line = br.readLine()) != null) {
-				
-					str1 = line;
+
+				str1 = line;
 			}
 
 		} catch (IOException e) {
@@ -91,9 +95,6 @@ class Text extends Figure {
 			}
 		}
 	}
-	
-	
-
 
 	/**
 	 * Drawing method for circles.
@@ -103,10 +104,10 @@ class Text extends Figure {
 
 	}
 
-	private String str1;// = "abc";
+	private String str1;// = new String[20];
+	String content = " ";
 	private static int defx = 100;
 	private static int defy = 100;
-	private static String str = "/home/neha/eclipse-workspace/awt_draw/src/inputfile";
-	
-	
+	private static String str = "src/inputfile";
+
 }

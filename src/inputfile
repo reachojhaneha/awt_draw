@@ -1,1 +1,13 @@
 hi how are you
+are u good
+java.io.FileNotFoundException: /home/neha/eclipse-workspace/awt_draw/src/inputfile1 (No such file or directory)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at java.io.FileInputStream.<init>(FileInputStream.java:93)
+	at java.io.FileReader.<init>(FileReader.java:58)
+	at Text.<init>(Text.java:25)
+	at FigureWindow.main(FigureWindow.java:65)
+Exception in thread "main" java.lang.NullPointerException
+	at Text.<init>(Text.java:39)
+	at FigureWindow.main(FigureWindow.java:65)

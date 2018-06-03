@@ -1,5 +1,7 @@
 import java.awt.*;
 
+//package com.journaldev.threads;
+
 /**
  * A simple window to display graphic figures in. The window is a subclass of
  * the Java ’Frame’ class, which describes graphic windows. The window keeps its
@@ -9,7 +11,6 @@ import java.awt.*;
  * Frame class whenever the window’s contents need to be redrawn. A new
  * implementation of paint is provided in FigureWindow to handle the drawing.
  */
-
 
 class FigureWindow extends Frame {
 	/**
@@ -54,6 +55,7 @@ class FigureWindow extends Frame {
 	/**
 	 * Main method: creates a FigureWindow and a few figures inside it.
 	 */
+	@SuppressWarnings("deprecation")
 	public static void main(String[] args) {
 		FigureWindow w = new FigureWindow(10);
 		w.setSize(400, 300);
@@ -62,9 +64,19 @@ class FigureWindow extends Frame {
 		w.addFigure(new Circle(300, 200, 200));
 		w.addFigure(new Triangle(new int[] { 50, 100, 25 }, new int[] { 0, 100, 100 }));
 		w.addFigure(new Triangle());
-		w.addFigure(new Text("/home/neha/eclipse-workspace/awt_draw/src/inputfile",150,150));
-		w.addFigure(new Text("/home/neha/eclipse-workspace/awt_draw/src/inputfile"));
+		w.addFigure(new Text("src/inputfile",150,150));
+		w.addFigure(new Text("src/inputfile"));
 		w.addFigure(new Text());
+		
+		//w.show();
+		//w.wait(50);
 		w.show();
+	
+		
+		//w.dispose();
+		//Thread.sleep(100);
+		//System.exit(0);
+		
 	}
+	
 }
