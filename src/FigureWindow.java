@@ -74,8 +74,13 @@ class FigureWindow extends Frame {
 	
 		
 		//w.dispose();
-		//Thread.sleep(100);
-		//System.exit(0);
+		try{
+		Thread.sleep(5000);
+		}catch(InterruptedException e) {
+			System.out.println("I was inturrupted");
+			e.printStackTrace();
+		}
+		System.exit(0);
 		
 	}
 	
